@@ -4,39 +4,36 @@ import {
   Pressable,
   StyleProp,
   StyleSheet,
-  TextProps,
+  TextStyle,
   View,
-  ViewProps,
+  ViewStyle,
 } from "react-native";
-import GoogleLogo from "./jsx-icons/google-logo";
-import CustomText from "./text";
+import CustomText from "../text";
 
 const Button = (props: {
   onPress?: () => void;
   label: string;
   variant?: "primary" | "secondary" | "icon";
-  style?: StyleProp<ViewProps>;
-  textStyle?: StyleProp<TextProps>;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
+  icon?: React.ReactNode;
 }) => {
-  const { onPress, label, variant = "primary", style, textStyle } = props;
+  const { onPress, label, variant = "primary", style, textStyle, icon } = props;
 
   return (
     <Pressable
       onPress={onPress}
-      style={[
+      style={({ pressed }) => [
         styles.buttonStyle,
         variant !== "icon" && styles.buttonPlainStyle,
         variant === "icon" && styles.buttonIconStyle,
         variant === "primary" && styles.primaryButton,
         variant === "secondary" && styles.secondaryButton,
         style,
+        pressed && styles.pressed,
       ]}
     >
-      {variant === "icon" && (
-        <View style={styles.iconView}>
-          <GoogleLogo />
-        </View>
-      )}
+      {variant === "icon" && <View style={styles.iconView}>{icon}</View>}
       <CustomText
         style={[
           styles.buttonText,
@@ -56,6 +53,9 @@ export default Button;
 const styles = StyleSheet.create({
   buttonPlainStyle: {
     alignItems: "center",
+  },
+  pressed: {
+    opacity: 0.75,
   },
   buttonIconStyle: {
     flexDirection: "row",
