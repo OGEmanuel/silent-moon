@@ -3,6 +3,7 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
+import { getLetterSpacing, getLineHeight } from "@/lib/utils";
 import { Platform } from "react-native";
 
 const tintColorLight = "#8E97FD";
@@ -12,8 +13,10 @@ export const Colors = {
   light: {
     text: "#3F414E",
     btnPryText: "#F6F1FB",
+    textSec: "#A1A4B2",
     textBlack: "#000",
     background: "#fff",
+    backgroundSec: "#F2F3F7",
     tint: tintColorLight,
     tintSec: "#EBEAEC",
     icon: "#687076",
@@ -58,6 +61,10 @@ export const Fonts = Platform.select({
 
 export const Typography = {
   fontSize: 14,
-  letterSpacing: 14 * (5 / 100),
-  lineHeight: 14 * (108 / 100),
+  letterSpacing: getLetterSpacing(14),
+  lineHeight: getLineHeight(14),
+};
+
+export const Size = {
+  regular: 20,
 };

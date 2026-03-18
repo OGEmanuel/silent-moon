@@ -1,7 +1,7 @@
-import Button from "@/components/button";
+import AuthFooter from "@/components/auth-footer";
 import CustomText from "@/components/text";
-import { Colors, Typography } from "@/constants/theme";
-import { Link } from "expo-router";
+import Button from "@/components/ui/button";
+import { Size } from "@/constants/theme";
 import { StyleSheet, View } from "react-native";
 
 const MainContent = () => {
@@ -19,12 +19,7 @@ const MainContent = () => {
       </View>
       <View style={styles.footerWrapper}>
         <Button label="SIGN UP" />
-        <CustomText style={[styles.textStyle, styles.footerTextStyle]}>
-          ALREADY HAVE AN ACCOUNT?{" "}
-          <Link href={"/"} style={styles.linkText}>
-            LOG IN
-          </Link>
-        </CustomText>
+        <AuthFooter />
       </View>
     </View>
   );
@@ -45,20 +40,11 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   footerWrapper: {
-    paddingHorizontal: 20,
-    gap: 20,
+    paddingHorizontal: Size.regular,
+    gap: Size.regular,
   },
   textStyle: {
     textAlign: "center",
-  },
-  footerTextStyle: {
-    fontSize: Typography.fontSize,
-    letterSpacing: Typography.letterSpacing,
-    lineHeight: Typography.lineHeight,
-    color: Colors.light.textBlack,
-  },
-  linkText: {
-    color: Colors.light.tint,
   },
   textStyleLg: {
     fontFamily: "helveticaBold",
