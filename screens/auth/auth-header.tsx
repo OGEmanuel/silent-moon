@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   mainWrapper: {
     paddingTop: 24,
-    gap: 28,
+    gap: 16,
     paddingHorizontal: Size.regular,
   },
   bgImage: {
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.background,
   },
   bodyWrapper: {
-    gap: 40,
+    gap: 28,
   },
   headerBtnWrapper: {
     gap: 33,

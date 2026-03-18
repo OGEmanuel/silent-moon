@@ -2,9 +2,11 @@ import AuthFooter from "@/components/auth-footer";
 import CustomText from "@/components/text";
 import Button from "@/components/ui/button";
 import { Size } from "@/constants/theme";
+import { useRouter } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
 const MainContent = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.mainWrapper}>
@@ -18,7 +20,7 @@ const MainContent = () => {
         </View>
       </View>
       <View style={styles.footerWrapper}>
-        <Button label="SIGN UP" />
+        <Button label="SIGN UP" onPress={() => router.push("/signup")} />
         <AuthFooter />
       </View>
     </View>

@@ -34,7 +34,7 @@ const formSchema = z.object({
 });
 
 const SignupScreen = () => {
-  const [showPassword, setShowPassword] = useState(true);
+  const [hidePassword, setHidePassword] = useState(true);
   const router = useRouter();
 
   const form = useForm({
@@ -102,12 +102,12 @@ const SignupScreen = () => {
                     <InputField
                       placeholder="Password"
                       textContentType="password"
-                      secureTextEntry={showPassword}
+                      secureTextEntry={hidePassword}
                       autoCapitalize="none"
                       field={field}
                     >
-                      <Pressable onPress={() => setShowPassword(!showPassword)}>
-                        {showPassword ? (
+                      <Pressable onPress={() => setHidePassword(!hidePassword)}>
+                        {hidePassword ? (
                           <Ionicons
                             name="eye"
                             size={24}
