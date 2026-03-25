@@ -1,21 +1,25 @@
 import SafeAreaWrapper from "@/components/safe-area-wrapper";
-import CustomText from "@/components/text";
+import { Colors } from "@/constants/theme";
 import { StyleSheet } from "react-native";
+import Hero from "./hero";
+import MainContent from "./main-content";
 
-const GetStartedScreen = () => {
+const WelcomeScreen = () => {
   return (
     <SafeAreaWrapper style={styles.mainWrapper}>
-      <CustomText>GET STARTED</CustomText>
+      <Hero />
+      <MainContent />
     </SafeAreaWrapper>
   );
 };
 
-export default GetStartedScreen;
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   mainWrapper: {
     flex: 1,
-    justifyContent: "center",
+    paddingTop: 50,
     alignItems: "center",
+    backgroundColor: Colors.light.tint,
   },
 });

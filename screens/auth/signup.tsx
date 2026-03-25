@@ -51,7 +51,7 @@ const SignupScreen = () => {
     onSubmit: async ({ value }) => {
       form.reset();
       console.log(value);
-      router.push("/get-started");
+      router.push("/welcome");
     },
   });
 
