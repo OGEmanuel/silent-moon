@@ -110,13 +110,13 @@ const SignupScreen = () => {
                         {hidePassword ? (
                           <Ionicons
                             name="eye"
-                            size={24}
+                            size={Size.md}
                             color={Colors.light.text}
                           />
                         ) : (
                           <Ionicons
                             name="eye-off"
-                            size={24}
+                            size={Size.md}
                             color={Colors.light.text}
                           />
                         )}
@@ -126,7 +126,7 @@ const SignupScreen = () => {
                 </form.Field>
                 <form.Field name="acceptPolicy">
                   {(field) => (
-                    <View>
+                    <>
                       <View style={styles.checkboxWrapper}>
                         <CustomText style={styles.checkboxLabel}>
                           I have read the{" "}
@@ -152,7 +152,7 @@ const SignupScreen = () => {
                             .join(", ")}
                         </CustomText>
                       )}
-                    </View>
+                    </>
                   )}
                 </form.Field>
               </View>
@@ -187,7 +187,9 @@ const styles = StyleSheet.create({
   },
   checkboxWrapper: {
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
+    paddingHorizontal: 8,
   },
   checkboxLabel: {
     fontSize: Typography.fontSize,
@@ -199,9 +201,10 @@ const styles = StyleSheet.create({
     color: Colors.light.tint,
   },
   checkbox: {
-    width: 24,
-    height: 24,
+    width: Size.md,
+    height: Size.md,
     borderRadius: 4,
+    borderColor: Colors.light.textSec,
   },
   error: {
     color: "red",

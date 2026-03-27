@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   mainWrapper: {
-    paddingTop: 24,
+    paddingTop: Size.md,
     gap: 16,
     paddingHorizontal: Size.regular,
   },

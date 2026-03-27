@@ -8,6 +8,7 @@ import Choice8Icon from "@/components/jsx-icons/choice-8-icon";
 import CustomText from "@/components/text";
 import { Colors, Size } from "@/constants/theme";
 import { getLineHeight } from "@/lib/utils";
+import { useRouter } from "expo-router";
 import {
   Platform,
   Pressable,
@@ -28,6 +29,7 @@ type ChoiceListType = {
 };
 
 const TopicList = () => {
+  const router = useRouter();
   const ChoiceList = [
     {
       id: 1,
@@ -90,7 +92,14 @@ const TopicList = () => {
   const RenderChoiceList = (props: { listItem: ChoiceListType }) => {
     const { listItem } = props;
     return (
-      <Pressable style={[styles.choiceWrapper, listItem.wrapperStyle]}>
+      <Pressable
+        style={({ pressed }) => [
+          styles.choiceWrapper,
+          listItem.wrapperStyle,
+          pressed && styles.onPress,
+        ]}
+        onPress={() => router.push("/reminders")}
+      >
         {listItem.icon}
         <CustomText style={[styles.choiceText, listItem.textStyle]}>
           {listItem.title}
@@ -125,6 +134,9 @@ const styles = StyleSheet.create({
     paddingBottom: 17,
     overflow: "hidden",
     alignItems: "center",
+  },
+  onPress: {
+    opacity: 0.75,
   },
   choiceText: {
     fontSize: 16,
@@ -166,7 +178,7 @@ const styles = StyleSheet.create({
   },
   fifthChoice: {
     backgroundColor: Colors.light.fifthChoiceBg,
-    gap: 24,
+    gap: Size.md,
     paddingTop: 9,
   },
   sixthChoice: {
@@ -180,7 +192,7 @@ const styles = StyleSheet.create({
     paddingTop: 17,
   },
   scrollViewWrapper: {
-    gap: 24,
+    gap: Size.md,
     flexDirection: "column",
     paddingHorizontal: Size.regular,
     flex: 1,
@@ -188,8 +200,8 @@ const styles = StyleSheet.create({
   },
   contentWrapper: {
     flexDirection: "row",
-    gap: 24,
-    paddingBottom: Platform.OS === "android" ? Size.regular : null,
+    gap: Size.md,
+    paddingBottom: Platform.OS === "android" ? Size.regular : 36,
   },
   innerViewWrapper: {
     flex: 1,

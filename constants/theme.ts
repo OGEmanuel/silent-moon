@@ -17,18 +17,25 @@ export const Colors = {
     textBlack: "#000",
     textAlt: "#FFECCC",
     textAltSec: "#FEF9F3",
+    textAltForeGround: "#FEFFFE",
     background: "#fff",
     backgroundSec: "#F2F3F7",
+    backgroundAlt: "#F5F5F9",
     tint: tintColorLight,
     tintSec: "#EBEAEC",
     icon: "#687076",
-    tabIconDefault: "#687076",
+    tabIconDefault: "#A0A3B1",
     tabIconSelected: tintColorLight,
     secondChoiceBg: "#FA6E5A",
     thirdChoiceBg: "#FEB18F",
     fourthChoiceBg: "#FFCF86",
     fifthChoiceBg: "#6CB28E",
     eighthChoiceBg: "#D9A5B5",
+    category: "#F7E8D0",
+    musicCardBg: "#FFC97E",
+    musicText: "#524F53",
+    dailyThought: "#333242",
+    recList1Bg: "#FCF5EB",
   },
   dark: {
     text: "#ECEDEE",
@@ -74,4 +81,5 @@ export const Typography = {
 
 export const Size = {
   regular: 20,
+  md: 24,
 };
