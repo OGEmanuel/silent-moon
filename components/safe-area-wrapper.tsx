@@ -8,7 +8,9 @@ const SafeAreaWrapper = (props: {
 }) => {
   const { children, style } = props;
   return (
-    <SafeAreaView style={[styles.wrapper, style]}>{children}</SafeAreaView>
+    <SafeAreaView style={[styles.wrapper, style]} edges={["top"]}>
+      {children}
+    </SafeAreaView>
   );
 };
 

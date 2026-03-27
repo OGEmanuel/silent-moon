@@ -38,6 +38,7 @@ const Button = (props: {
         style={[
           styles.buttonText,
           variant === "primary" && styles.primaryButtonText,
+          variant === "secondary" && styles.secondaryButtonText,
           variant === "icon" && styles.iconText,
           textStyle,
         ]}
@@ -74,6 +75,9 @@ const styles = StyleSheet.create({
   },
   primaryButtonText: {
     color: Colors.light.btnPryText,
+  },
+  secondaryButtonText: {
+    color: Colors.light.text,
   },
   primaryButton: {
     backgroundColor: Colors.light.tint,

@@ -86,13 +86,13 @@ const LoginScreen = () => {
                         {hidePassword ? (
                           <Ionicons
                             name="eye"
-                            size={24}
+                            size={Size.md}
                             color={Colors.light.text}
                           />
                         ) : (
                           <Ionicons
                             name="eye-off"
-                            size={24}
+                            size={Size.md}
                             color={Colors.light.text}
                           />
                         )}

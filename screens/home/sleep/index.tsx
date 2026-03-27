@@ -2,15 +2,15 @@ import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import CustomText from "@/components/text";
 import { StyleSheet } from "react-native";
 
-const GetStartedScreen = () => {
+const SleepScreen = () => {
   return (
     <SafeAreaWrapper style={styles.mainWrapper}>
-      <CustomText>GET STARTED</CustomText>
+      <CustomText>HOME SCREEN</CustomText>
     </SafeAreaWrapper>
   );
 };
 
-export default GetStartedScreen;
+export default SleepScreen;
 
 const styles = StyleSheet.create({
   mainWrapper: {

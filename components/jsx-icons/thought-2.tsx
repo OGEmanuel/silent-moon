@@ -1,0 +1,15 @@
+import Svg, { Path } from "react-native-svg";
+
+const Thought2Icon = () => {
+  return (
+    <Svg width="184" height="66" viewBox="0 0 184 66" fill="none">
+      <Path
+        d="M9.55004 32.7186C-6.29643 16.6279 1.09395 2.20173 6.76996 -3H184V43.4688C143.341 87.1633 116.235 55.2594 113.803 47.2834C111.37 39.3074 108.938 12.2584 70.7116 35.4928C32.4854 58.7272 29.3581 52.8319 9.55004 32.7186Z"
+        fill="#9B9DB4"
+        fillOpacity="0.49"
+      />
+    </Svg>
+  );
+};
+
+export default Thought2Icon;
